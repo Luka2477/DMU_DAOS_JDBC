@@ -11,9 +11,6 @@ import java.sql.Statement;
 
 public class JAVAexamples {
 
-	/**
-	 * @param args
-	 */
 	static Connection minConnection;
 	static Statement stmt;
 	static BufferedReader inLine;
@@ -39,22 +36,21 @@ public class JAVAexamples {
 	}
 	
 	public static void selectmedparm() {
-	try {
-		// Indlæser søgestreng
-		System.out.println("Indtast søgestreng");
-		String inString = inLine.readLine();
-		// Laver sql-sætning og får den udført
-		String sql = "select navn,stilling from person where navn like '" + inString + "%'";
-		System.out.println("SQL-streng er "+ sql);
-		ResultSet res=stmt.executeQuery(sql);
-		//gennemløber svaret
-		while (res.next()) {
-			System.out.println(res.getString(1) + "    " + res.getString(2));
-		}
-		// pæn lukning
- 		if (!minConnection.isClosed()) minConnection.close();
-		}
-		catch (Exception e) {
+		try {
+			// Indlæser søgestreng
+			System.out.println("Indtast søgestreng");
+			String inString = inLine.readLine();
+			// Laver sql-sætning og får den udført
+			String sql = "select navn,stilling from person where navn like '" + inString + "%'";
+			System.out.println("SQL-streng er "+ sql);
+			ResultSet res=stmt.executeQuery(sql);
+			//gennemløber svaret
+			while (res.next()) {
+				System.out.println(res.getString(1) + "    " + res.getString(2));
+			}
+			// pæn lukning
+			if (!minConnection.isClosed()) minConnection.close();
+		} catch (Exception e) {
 			System.out.println("fejl:  "+e.getMessage());
 		}
 	}
@@ -93,12 +89,12 @@ public class JAVAexamples {
 			          	          break;
 			         			 }
 			          default: System.out.println("fejlSQL:  "+e.getMessage());
-				};
+				}
 		}
 		catch (Exception e) {
 			System.out.println("fejl:  "+e.getMessage());
 		}
-	};
+	}
 	
 	public static void insertprepared() {
 		try {
@@ -137,12 +133,12 @@ public class JAVAexamples {
 			          	          break;
 			         			 }
 			          default: System.out.println("fejlSQL:  "+e.getMessage());
-				};
+				}
 		}
 		catch (Exception e) {
 			System.out.println("fejl:  "+e.getMessage());
 		}
-	};	
+	}
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
