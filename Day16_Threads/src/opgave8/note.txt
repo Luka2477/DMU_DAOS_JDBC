@@ -1,0 +1,26 @@
+Det tog 1476,232221ms at generere statistik på 10.000.000 rækker.
+Det tog 1437,881552ms at generere statistik på 10.000.000 rækker.
+Det tog 1458,419415ms at generere statistik på 10.000.000 rækker.
+
+Gennemsnit          1457,511062ms
+Samlet over tråde   1457,511062ms
+
+---------------------------------------------------------------------------
+--- 2 THREADS
+
+Det tog 825,483349ms at generere statistik på 10.000.000 rækker, med 2 tråde.
+Det tog 867,560329ms at generere statistik på 10.000.000 rækker, med 2 tråde.
+Det tog 882,342763ms at generere statistik på 10.000.000 rækker, med 2 tråde.
+
+Gennemsnit           858,462147ms
+Samlet over tråde   1716,924294ms
+
+---------------------------------------------------------------------------
+--- 4 THREADS
+
+Det tog 490,976398ms at generere statistik på 10.000.000 rækker, med 4 tråde.
+Det tog 504,042738ms at generere statistik på 10.000.000 rækker, med 4 tråde.
+Det tog 466,840424ms at generere statistik på 10.000.000 rækker, med 4 tråde.
+
+Gennemsnit           487,286520ms
+Samlet over tråde   1949,146080ms
