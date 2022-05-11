@@ -17,22 +17,22 @@ public class LottoThread extends Thread {
 
     public void run() {
         int concurrentId = (thisId + 1) % lotto.getFlagSize();
-        lotto.setFlag(true, concurrentId);
+        lotto.setFlag(true, thisId);
         lotto.setTurn(concurrentId);
-        while (lotto.getFlag(concurrentId) && lotto.getTurn() == concurrentId) {
-            for (ArrayList<Integer> arr : rows) {
-                int count = 0;
+        while (lotto.getFlag(concurrentId) && lotto.getTurn() == concurrentId) ;
 
-                for (int num : arr) {
-                    if (lotto.getSelection().contains(num)) {
-                        count++;
-                    }
+        for (ArrayList<Integer> arr : rows) {
+            int count = 0;
+
+            for (int num : arr) {
+                if (lotto.getSelection().contains(num)) {
+                    count++;
                 }
-
-                lotto.setStatistic(count, lotto.getStatistics().get(count) + 1);
             }
 
-            lotto.setFlag(false, concurrentId);
+            lotto.setStatistic(count, lotto.getStatistics().get(count) + 1);
         }
+
+        lotto.setFlag(false, thisId);
     }
 }
