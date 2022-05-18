@@ -1,4 +1,4 @@
-package opgave2;
+package opgave3;
 
 public class Counter {
     private final int COUNTER_MAX;
@@ -9,7 +9,7 @@ public class Counter {
         counter = COUNTER_INIT;
     }
 
-    public void incCounter() {
+    public synchronized void incCounter() {
         ++counter;
     }
 

@@ -19,8 +19,11 @@ public class App {
 
         custThread1.join();
         System.out.printf("[DONE] No more customers at %s.%n", custThread1.getName());
+
         custThread2.join();
         System.out.printf("[DONE] No more customers at %s.%n", custThread2.getName());
+
+        // toggleShouldRun() kan kommenteres ud, hvis ekspedienten skal blive ved at vente på kunder.
         cashTread.toggleShouldRun();
         cashTread.join();
         System.out.println("[DONE] No more customers to serve.");

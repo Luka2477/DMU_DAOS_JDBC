@@ -20,23 +20,20 @@ public class CashierThread extends Thread {
         while (shouldRun || sem.availablePermits() != 0) {
             try {
                 sem.acquire();
-                sleepRand(MIN_WAIT, MAX_WAIT);
-                System.out.printf("[CASH] Cashier is serving number %d.%n", counter.incCounter());
+                Sleep.sleepRand(MIN_WAIT, MAX_WAIT);
+                counter.incCounter();
+                System.out.printf("[CASH] Cashier is serving number %s.%n", counter);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
+            }
+
+            if (sem.availablePermits() == 0) {
+                System.out.println("[BREAK] No more customers to server, for now...");
             }
         }
     }
 
     public void toggleShouldRun() {
         shouldRun = !shouldRun;
-    }
-
-    private void sleepRand(int min, int max) {
-        try {
-            sleep((long) (min + (Math.random() * (max - min))));
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
     }
 }

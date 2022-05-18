@@ -1,16 +1,16 @@
-package opgave1;
+package opgave3;
 
 public class App {
     public static void main(String[] args) throws InterruptedException {
-        Counter custCounter = new Counter(100, 200);
-        Counter cashCounter = new Counter(100, 200);
+        Counter custCounter = new Counter(100, 1000);
+        Counter cashCounter = new Counter(100, 1000);
 
-        CustomerThread custThread1 = new CustomerThread("left entrance", custCounter, 10, 0);
-        CustomerThread custThread2 = new CustomerThread("right entrance", custCounter, 10, 1);
-        CashierThread cashTread = new CashierThread(custCounter, cashCounter);
+        CashierThread cashThread = new CashierThread(cashCounter, custCounter);
+        CustomerThread custThread1 = new CustomerThread("left entrance", custCounter, cashThread, 100);
+        CustomerThread custThread2 = new CustomerThread("right entrance", custCounter, cashThread, 100);
         custThread1.start();
         custThread2.start();
-        cashTread.start();
+        cashThread.start();
 
         custThread1.join();
         System.out.printf("[DONE] No more customers at %s.%n", custThread1.getName());
@@ -19,8 +19,8 @@ public class App {
         System.out.printf("[DONE] No more customers at %s.%n", custThread2.getName());
 
         // toggleShouldRun() kan kommenteres ud, hvis ekspedienten skal blive ved at vente på kunder.
-        cashTread.toggleShouldRun();
-        cashTread.join();
+        cashThread.toggleShouldRun();
+        cashThread.join();
         System.out.println("[DONE] No more customers to serve.");
     }
 }

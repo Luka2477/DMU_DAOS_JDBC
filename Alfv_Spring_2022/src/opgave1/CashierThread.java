@@ -19,8 +19,9 @@ public class CashierThread extends Thread {
             while (counter.getCounter() == custCounter.getCounter()) ;
 
             while (counter.getCounter() != custCounter.getCounter()) {
-                sleepRand(MIN_WAIT, MAX_WAIT);
-                System.out.printf("[CASH] Cashier is serving number %d.%n", counter.incCounter());
+                Sleep.sleepRand(MIN_WAIT, MAX_WAIT);
+                counter.incCounter();
+                System.out.printf("[CASH] Cashier is serving number %s.%n", counter);
             }
 
             System.out.println("[BREAK] No more customers to server, for now...");
@@ -29,13 +30,5 @@ public class CashierThread extends Thread {
 
     public void toggleShouldRun() {
         shouldRun = !shouldRun;
-    }
-
-    private void sleepRand(int min, int max) {
-        try {
-            sleep((long) (min + (Math.random() * (max - min))));
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
     }
 }
