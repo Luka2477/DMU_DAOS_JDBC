@@ -5,9 +5,9 @@ public class App {
         Counter custCounter = new Counter(100, 1000);
         Counter cashCounter = new Counter(100, 1000);
 
+        CustomerThread custThread1 = new CustomerThread("left entrance", custCounter, 10);
+        CustomerThread custThread2 = new CustomerThread("right entrance", custCounter, 10);
         CashierThread cashThread = new CashierThread(cashCounter, custCounter);
-        CustomerThread custThread1 = new CustomerThread("left entrance", custCounter, cashThread, 100);
-        CustomerThread custThread2 = new CustomerThread("right entrance", custCounter, cashThread, 100);
         custThread1.start();
         custThread2.start();
         cashThread.start();

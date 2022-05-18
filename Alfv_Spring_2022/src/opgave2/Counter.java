@@ -9,16 +9,11 @@ public class Counter {
         counter = COUNTER_INIT;
     }
 
-    public void incCounter() {
-        ++counter;
+    public int incCounter() {
+        return ++counter % COUNTER_MAX;
     }
 
     public int getCounter() {
         return counter;
-    }
-
-    @Override
-    public String toString() {
-        return Integer.toString(counter % COUNTER_MAX);
     }
 }

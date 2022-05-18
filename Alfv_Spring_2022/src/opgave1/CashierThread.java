@@ -20,11 +20,11 @@ public class CashierThread extends Thread {
 
             while (counter.getCounter() != custCounter.getCounter()) {
                 Sleep.sleepRand(MIN_WAIT, MAX_WAIT);
-                counter.incCounter();
-                System.out.printf("[CASH] Cashier is serving number %s.%n", counter);
+                int count = counter.incCounter();
+                System.out.printf("[CASH] Cashier is serving number %d.%n", count);
             }
 
-            System.out.println("[BREAK] No more customers to server, for now...");
+            System.out.println("[BREAK] No more customers to serve, for now...");
         }
     }
 

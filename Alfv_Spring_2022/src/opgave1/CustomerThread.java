@@ -30,8 +30,8 @@ public class CustomerThread extends Thread {
     }
 
     private void runCritical() {
-        counter.incCounter();
-        System.out.printf("[CUST] Someone picked number %s from %s.%n", counter, getName());
+        int count = counter.incCounter();
+        System.out.printf("[CUST] Someone picked number %d from %s.%n", count, getName());
         Sleep.sleepRand(MIN_WAIT, MAX_WAIT);
     }
 }
