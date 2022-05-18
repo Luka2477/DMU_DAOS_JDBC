@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Alfv_Spring_2022/Alfv_Spring_2022.iml" filepath="$PROJECT_DIR$/Alfv_Spring_2022/Alfv_Spring_2022.iml" />
       <module fileurl="file://$PROJECT_DIR$/Day15_JDBC/Day15_JDBC.iml" filepath="$PROJECT_DIR$/Day15_JDBC/Day15_JDBC.iml" />
       <module fileurl="file://$PROJECT_DIR$/Day16_Threads/Day16_Threads.iml" filepath="$PROJECT_DIR$/Day16_Threads/Day16_Threads.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day17_Semaphors/Day17_Semaphors.iml" filepath="$PROJECT_DIR$/Day17_Semaphors/Day17_Semaphors.iml" />
       <module fileurl="file://$PROJECT_DIR$/Day6_JDBC/Day6_JDBC.iml" filepath="$PROJECT_DIR$/Day6_JDBC/Day6_JDBC.iml" />
       <module fileurl="file://$PROJECT_DIR$/Proj_DAOS_Mini/Proj_DAOS_Mini.iml" filepath="$PROJECT_DIR$/Proj_DAOS_Mini/Proj_DAOS_Mini.iml" />
     </modules>

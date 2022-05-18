@@ -19,7 +19,7 @@ public class LottoThread extends Thread {
         int concurrentId = (thisId + 1) % lotto.getFlagSize();
         lotto.setFlag(true, thisId);
         lotto.setTurn(concurrentId);
-        while (lotto.getFlag(concurrentId) && lotto.getTurn() == concurrentId) ;
+        while (!lotto.getFlag(thisId) && lotto.getTurn() != thisId) ;
 
         for (ArrayList<Integer> arr : rows) {
             int count = 0;
